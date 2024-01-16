@@ -50,7 +50,6 @@ def filedownload(df):
 
 #single prediction function
 def stroke_detect(givendata):
-    # loaded_model = joblib.load("heartcheck.sav")
 
     loaded_model=pk.load(open("strokedetect.sav", "rb"))
     input_data_as_numpy_array = np.asarray(givendata)# changing the input_data to numpy array
@@ -178,14 +177,14 @@ def multi(input_data):
         interchange=[]
         for i in prediction:
             if i==1:
-                newi="Heart issues present"
+                newi="Stroke issues present"
                 interchange.append(newi)
             elif i==0:
-                newi="No heart issues present"
+                newi="No Stroke issues"
                 interchange.append(newi)
             
         st.subheader('All the predictions')
-        prediction_output = pd.Series(interchange, name='Heart attack prediction results')
+        prediction_output = pd.Series(interchange, name='Stroke prediction results')
         prediction_id = pd.Series(np.arange(len(interchange)),name="Patient_ID")
         dfresult = pd.concat([prediction_id, prediction_output], axis=1)
         st.dataframe(dfresult)
