@@ -33,7 +33,7 @@ from catboost import CatBoostClassifier
 
 
 #configuring the page setup
-st.set_page_config(page_title='Stroke prediction system',layout='centered')
+st.set_page_config(page_title='Stroke-prediction system',layout='centered')
 
 with st.sidebar:
     st.title("Home Page")
