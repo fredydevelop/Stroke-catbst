@@ -158,7 +158,9 @@ def multi(input_data):
     dfinput = pd.read_csv(input_data)
     if "stroke" in dfinput.iloc[1:]:
         dfinput.drop("stroke",axis=1,inplace=True)
+    dfinput=dfinput.drop(dfinput.column[0])
     dfinput=dfinput.reset_index(drop=True)
+    dfinput=dfinput.drop(dfinput.column[0])
 
     st.header('A view of the uploaded dataset')
     st.markdown('')
