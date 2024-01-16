@@ -26,13 +26,14 @@ from streamlit_option_menu import option_menu
 import base64
 import pickle as pk
 import joblib
+from catboost import CatBoostClassifier
 # import option_menu
 
 
 
 
 #configuring the page setup
-st.set_page_config(page_title='Heart attack prediction system',layout='centered')
+st.set_page_config(page_title='Stroke prediction system',layout='centered')
 
 with st.sidebar:
     st.title("Home Page")
@@ -91,20 +92,20 @@ def main():
         heartDis=0
 
 
-    option14 = st.selectbox("Ever Married ? ",("","Yes", "No"),key="married_")
-    if option14== "Yes":
+    marriage = st.selectbox("Ever Married ? ",("","Yes", "No"),key="married_")
+    if marriage== "Yes":
         married=1
     else:
         married=0
 
     option6 = st.selectbox("Work Type ",("","children", "Govt_jov", "Never_worked", "Private" "Self-employed"),key="worktype")
-    if option14== "children":
+    if option6== "children":
         work_type=4
-    elif option14=="Private":
+    elif option6=="Private":
         work_type=2
-    elif option14=="Self-employed":
+    elif option6=="Self-employed":
         work_type=3
-    elif option14=="Govt_jov":
+    elif option6=="Govt_jov":
         work_type=0
     else:
         work_type=1
@@ -147,8 +148,8 @@ def main():
     detectionResult = ''#for displaying result
     
     # creating a button for Prediction
-    if age!="" and option1!="" and option4!="" and option5!="" and option6!="" and option7 !="" and option14 !="" and glucose!="" and bmi!="" and smoking_status!="" and st.button('Predict'):
-        detectionResult = stroke_detect([age,sex,hyperten,heartDis,option14, married,work_type, resident, glucose, bmi, smoking_stat])
+    if age!="" and option1!="" and option4!="" and option5!="" and option6!="" and option7 !="" and marriage !="" and glucose!="" and bmi!="" and smoking_status!="" and st.button('Predict'):
+        detectionResult = stroke_detect([age,sex,hyperten,heartDis, married,work_type, resident, glucose, bmi, smoking_stat])
         st.success(detectionResult)
 
 
