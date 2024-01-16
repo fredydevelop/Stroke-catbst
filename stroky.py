@@ -165,7 +165,7 @@ def multi(input_data):
     st.dataframe(dfinput)
 
     dfinput=dfinput.values
-    std_scaler_loaded=pk.load(open("my_saved_std_scaler.pkl", "rb"))
+    std_scaler_loaded=pk.load(open("my_standard_scaler.pkl", "rb"))
     std_dfinput=std_scaler_loaded.transform(dfinput)
     
     
