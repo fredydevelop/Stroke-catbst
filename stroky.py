@@ -97,7 +97,7 @@ def main():
     else:
         married=0
 
-    option6 = st.selectbox("Work Type ",("","children", "Govt_jov", "Never_worked", "Private" "Self-employed"),key="worktype")
+    option6 = st.selectbox("Work Type ",("","children", "Govt_jov", "Never_worked", "Private", "Self-employed"),key="worktype")
     if option6== "children":
         work_type=4
     elif option6=="Private":
