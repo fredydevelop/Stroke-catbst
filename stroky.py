@@ -148,7 +148,7 @@ def main():
     
     # creating a button for Prediction
     if age!="" and option1!="" and option4!="" and option5!="" and option6!="" and option7 !="" and marriage !="" and glucose!="" and bmi!="" and smoking_status!="" and st.button('Predict'):
-        detectionResult = stroke_detect([age,sex,hyperten,heartDis, married,work_type, resident, glucose, bmi, smoking_stat])
+        detectionResult = stroke_detect([sex,age,hyperten,heartDis, married,work_type, resident, glucose, bmi, smoking_stat])
         st.success(detectionResult)
 
 
