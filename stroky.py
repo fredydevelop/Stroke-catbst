@@ -65,7 +65,7 @@ def stroke_detect(givendata):
 
 #main function handling the input
 def main():
-    st.header("Check-Kit (Stroke oredictive system")
+    st.header("Check-Kit (Stroke predictive system)")
     
     #getting user input
     
